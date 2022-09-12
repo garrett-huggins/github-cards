@@ -1,36 +1,5 @@
 import Image from "next/image";
-
-type GithubCardsTypes = {
-  cardType: string;
-  user: any;
-  background: string;
-  bgColor: string;
-  theme: string;
-  cardDescription: string;
-};
-
-type CardDataTypes = {
-  CardData: {
-    user: {
-      login: string;
-      avatar_url: string;
-      followers: string;
-      public_repos: string;
-    };
-    PrimaryTheme: {
-      text: string;
-      bg: string;
-    };
-    SecondaryTheme: {
-      text: string;
-      bg: string;
-    };
-    bgColor: string;
-    BackgroundDesign: string;
-    background: string;
-    cardDescription: string;
-  };
-};
+import { CardUserInputs, CardDataTypes } from "../types/CardTypes";
 
 export default function GithubCards({
   cardType,
@@ -39,7 +8,7 @@ export default function GithubCards({
   bgColor,
   theme,
   cardDescription,
-}: GithubCardsTypes) {
+}: CardUserInputs) {
   // Set Theme and Background
   const PrimaryTheme = {
     text: theme == "dark" ? "text-white" : "text-black",
